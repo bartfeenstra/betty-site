@@ -1,0 +1,48 @@
+name: Test
+
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - name: 'Linux & Python 3.9'
+            os: ubuntu-latest
+            python: '3.9'
+
+    steps:
+      - name: Check out the source code
+        uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Build the development environment
+        run: |
+          ./bin/build-dev
+        shell: bash
+
+      - name: Run the tests
+        run: |
+          ./bin/test
+        shell: bash
+
+      - name: Generate the site
+        run: |
+          ./bin/generate
+        shell: bash
+
+      - name: Start the Dockerized server
+        run: |
+          ./bin/start
+        shell: bash
+
+      - name: Stop the Dockerized server
+        run: |
+          ./bin/stop
+        shell: bash

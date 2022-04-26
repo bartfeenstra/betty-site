@@ -1,0 +1,72 @@
+{
+  "0.1.0": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.1..zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.1.0.tar.gz"
+    }
+  },
+  "0.1.1": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.1.1.zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.1.1.tar.gz"
+    }
+  },
+  "0.2.x": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.x.zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.x.tar.gz"
+    },
+    "stable": false
+  },
+  "0.2.0": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.0.zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.0.tar.gz"
+    }
+  },
+  "0.2.1": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.1.zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.1.tar.gz"
+    }
+  },
+  "0.2.2": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.2.zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.2.tar.gz"
+    }
+  },
+  "0.2.3": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.3.zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.3.tar.gz"
+    }
+  },
+  "0.2.4": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.4.zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.4.tar.gz"
+    }
+  },
+  "0.2.5": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.5.zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.5.tar.gz"
+    }
+  },
+  "0.2.6": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.6.zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.2.6.tar.gz"
+    }
+  },
+  "0.3.x": {
+    "downloads": {
+      "source_zip": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.3.x-dev.zip",
+      "source_tar": "https://github.com/bartfeenstra/betty/archive/refs/tags/0.3.x-dev.tar.gz",
+      "executable_mac_zip": "https://github.com/bartfeenstra/betty/releases/download/0.3.x-dev/betty.app.zip",
+      "executable_windows_zip": "https://github.com/bartfeenstra/betty/releases/download/0.3.x-dev/betty.exe.zip"
+    },
+    "stable": false
+  }
+}

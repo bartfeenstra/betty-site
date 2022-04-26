@@ -1,0 +1,26 @@
+{% set platform_download_types = platforn_download_types | default([]) + [
+    betty_release_download_type.SOURCE_ZIP,
+    betty_release_download_type.SOURCE_TAR,
+] %}
+<div class="install-version-stable">
+    {% set latest_stable_release = (betty_stable_releases | betty_filter_release_by_download_type(platform_download_types)) | first %}
+    {% if latest_stable_release is not undefined %}
+        <h3>Latest release: <a href="/release/{{ latest_stable_release.version }}">{{ latest_stable_release.version }}</a></h3>
+        {% with release=latest_stable_release %}
+            {% include 'release.html.j2' %}
+        {% endwith %}
+    {% endif %}
+</div>
+<div class="install-version-unstable">
+    <h3>Upcoming releases</h3>
+    <ul>
+        {% set latest_unstable_release = latest_stable_release.version | betty_unstable_release_for_stable_release %}
+        {% if latest_unstable_release is not none %}
+            <li><a href="/release/{{ latest_unstable_release.version }}">{{ latest_unstable_release.version }}</a></li>
+        {% endif %}
+        {% set upcoming_unstable_release = (betty_unstable_releases | betty_filter_release_by_download_type(platform_download_types)) | first %}
+        {% if upcoming_unstable_release is not undefined %}
+            <li><a href="/release/{{ upcoming_unstable_release.version }}">{{ upcoming_unstable_release.version }}</a></li>
+        {% endif %}
+    </ul>
+</div>

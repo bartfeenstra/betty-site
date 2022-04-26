@@ -1,0 +1,11 @@
+{% extends 'base.html.j2' %}
+{% set page_title = 'All Betty releases' %}
+{% block page_content %}
+    <ol reversed class="releases">
+        {% for release in betty_stable_releases %}
+            <li>
+                <a href="/release/{{ release.version }}">{{ release.version }}</a>
+            </li>
+        {% endfor %}
+    </ol>
+{% endblock %}

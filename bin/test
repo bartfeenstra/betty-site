@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+cd "$(dirname "$0")/.."
+
+# Lint the shell scripts.
+for file in ./bin/*; do
+    shellcheck -x "$file"
+done
+
+# Test the Python code style.
+flake8 --config ./flake8.ini ./betty_site

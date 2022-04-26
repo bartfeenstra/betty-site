@@ -1,0 +1,14 @@
+server {
+	listen 80;
+	server_name default;
+	root /var/www/betty-site;
+    gzip on;
+    gzip_disable "msie6";
+    gzip_vary on;
+    gzip_types text/css application/javascript application/json application/xml;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <title>{% if page_title is defined %}{{ page_title | striptags }} - {% endif %}Betty</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Bart Feenstra & contributors"/>
+    <meta name="og:title" content="{%- if page_title is defined -%}{{ page_title | striptags }}{%- else -%}Betty{%- endif -%}"/>
+    <meta name="og:site_name" content="Betty"/>
+    <meta name="og:image" content="/betty-512x512.png"/>
+    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="icon" href="/betty.ico"/>
+</head>
+<body{% if page_class is defined and page_class %} class="{{ page_class }}"{% endif %}>
+<script>
+    document.body.classList.add('with-js');
+</script>
+<div id="page">
+    <header>
+        {% if page_class is defined and page_class == 'landing-page' %}
+            <h1>{{ page_title }}</h1>
+            {% if page_subtitle is defined %}
+                <p class="page-subtitle">{{ page_subtitle }}</p>
+            {% endif %}
+        {% endif %}
+        <nav id="nav-primary">
+            <div id="nav-sections" class="nav-primary-expandable">
+                <h2 class="nav-primary-action">Menu</h2>
+                <div class="nav-primary-expanded">
+                    <ul class="nav-secondary">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/install">Download & install</a></li>
+                        <li><a href="/contribute">Contribute</a></li>
+                        <li><a href="/contribute#report-bugs">Report bugs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="content">
+        <h1{% if page_class is defined and page_class == 'landing-page' %} class="visually-hidden"{% endif %}>{{ page_title }}</h1>
+        {% block page_content %}{% endblock %}
+    </div>
+    <footer>
+        <p>
+            Copyright Bart Feenstra & contributors
+        </p>
+    </footer>
+</div>
+</body>
+</html>

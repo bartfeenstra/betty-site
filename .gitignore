@@ -1,0 +1,12 @@
+# Third-party dependencies
+/.tox
+/node_modules
+
+# Build artifacts.
+/betty_site.egg-info
+/build
+/dist
+*.pyc
+
+# The generated site.
+/output

@@ -1,0 +1,31 @@
+<ul>
+    {% if betty_release_download_type.EXECUTABLE_MAC_ZIP in release.downloads %}
+        {% with
+        download_url=release.downloads[betty_release_download_type.EXECUTABLE_MAC_ZIP].url,
+        download_label='Download Mac application' %}
+            {% include 'platform-release-download.html.j2' %}
+        {% endwith %}
+    {% endif %}
+    {% if betty_release_download_type.EXECUTABLE_WINDOWS_ZIP in release.downloads %}
+        {% with
+        download_url=release.downloads[betty_release_download_type.EXECUTABLE_WINDOWS_ZIP].url,
+        download_label='Download Windows application' %}
+            {% include 'platform-release-download.html.j2' %}
+        {% endwith %}
+    {% endif %}
+    <li>Download and install using pip: <code>pip install betty</code></li>
+    {% if betty_release_download_type.SOURCE_ZIP in release.downloads %}
+        {% with
+        download_url=release.downloads[betty_release_download_type.SOURCE_ZIP].url,
+        download_label='Download and install from source (zip)' %}
+            {% include 'platform-release-download.html.j2' %}
+        {% endwith %}
+    {% endif %}
+    {% if betty_release_download_type.SOURCE_TAR in release.downloads %}
+        {% with
+        download_url=release.downloads[betty_release_download_type.SOURCE_TAR].url,
+        download_label='Download and install from source (tar.gz)' %}
+            {% include 'platform-release-download.html.j2' %}
+        {% endwith %}
+    {% endif %}
+</ul>
