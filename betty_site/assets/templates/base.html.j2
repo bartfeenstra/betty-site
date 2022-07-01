@@ -10,6 +10,7 @@
     <meta name="og:image" content="/betty-512x512.png"/>
     <link rel="stylesheet" href="/css/main.css"/>
     <link rel="icon" href="/betty.ico"/>
+    <script src="/js/main.js" type="module"></script>
 </head>
 <body{% if page_class is defined and page_class %} class="{{ page_class }}"{% endif %}>
 <script>
@@ -17,13 +18,11 @@
 </script>
 <div id="page">
     <header>
-        {% if page_class is defined and page_class == 'landing-page' %}
-            <h1>{{ page_title }}</h1>
-            {% if page_subtitle is defined %}
-                <p class="page-subtitle">{{ page_subtitle }}</p>
-            {% endif %}
-        {% endif %}
         <nav id="nav-primary">
+            <a id="site-title" href="/" title="Lankester & Feenstra ancestries">
+                <span class="betty-logo"></span>
+                <span class="betty-greeting">Welcome to Betty, my dear</span>
+            </a>
             <div id="nav-sections" class="nav-primary-expandable">
                 <h2 class="nav-primary-action">Menu</h2>
                 <div class="nav-primary-expanded">
@@ -38,13 +37,19 @@
         </nav>
     </header>
     <div id="content">
-        <h1{% if page_class is defined and page_class == 'landing-page' %} class="visually-hidden"{% endif %}>{{ page_title }}</h1>
+        <h1{% if page_class is defined and page_class == 'featured-page' %} class="visually-hidden"{% endif %}>{{ page_title }}</h1>
         {% block page_content %}{% endblock %}
     </div>
     <footer>
         <p>
             Copyright Bart Feenstra & contributors
         </p>
+        <p>Find Betty on:</p>
+        <ul>
+            <li><a href="https://github.com/bartfeenstra/betty">Github</a></li>
+            <li><a href="https://twitter.com/Betty_Project">Twitter</a></li>
+            <li><a href="https://pypi.org/project/betty/">PyPI</a></li>
+        </ul>
     </footer>
 </div>
 </body>
