@@ -1,6 +1,7 @@
 @import 'variables.css';
 
 html {
+    font-size: 1.2em;
     height: 100%;
 }
 
@@ -37,7 +38,6 @@ header .page-subtitle {
 }
 
 @media (min-width: 768px) {
-
     header h1 {
         font-size: 5rem;
     }
@@ -69,14 +69,23 @@ footer {
 }
 
 .featured {
-    background-color: #eee;
     margin: 0 -1rem;
     width: calc(100% + 2rem);
 }
 
 .featured-text {
     padding: 1rem;
-    width: calc(100% + 4rem);
+}
+
+@media (min-width: 768px) {
+    .featured-text {
+        padding: 1rem 3rem;
+    }
+}
+
+.featured-column {
+    margin: auto;
+    width: fit-content;
 }
 
 @media (min-width: 1000px) {
@@ -85,7 +94,7 @@ footer {
         justify-content: center;
     }
 
-    .featured.featured-two-columns>* {
+    .featured-column {
         align-self: center;
         max-width: 750px;
     }
@@ -270,45 +279,45 @@ footer {
 }
 
 /**
- * The front page.
- */
-@media (max-width: 999px) {
-    #front-page-getting-started .gallery {
-        margin: auto;
-        width: fit-content;
-    }
-}
-
-@media (min-width: 1000px) {
-    #front-page-getting-started .gallery {
-        display: grid;
-        grid-template-columns: calc(50% - 15px) calc(50% - 15px);
-        grid-gap: 10px;
-    }
-}
-
-/**
  * Image galleries.
  */
 .gallery {
+    margin: auto;
     padding: 30px;
+    width: fit-content;
+}
+
+.gallery a {
+    display: block;
 }
 
 .gallery figure {
-    margin: 0;
+    margin: 0 auto 3rem auto;
+    width: 100%;
 }
 
 .gallery img {
     display: block;
-    border: 9px #fff solid;
     max-width: 750px;
-    width: calc(100% - 18px);
+    width: 100%;
 }
 
 .gallery figcaption {
     display: block;
-    background: #fff;
     padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: calc(50% - 15px) calc(50% - 15px);
+        grid-gap: 10px;
+    }
+
+    .gallery figure {
+        margin: auto;
+        width: calc(100% - 18px);
+    }
 }
 
 /**
@@ -324,7 +333,7 @@ footer {
 }
 
 .platform {
-    background-color: #e0e0e0;
+    background-color: #eee;
     background-position: top 1rem right 1rem;
     background-repeat: no-repeat;
     background-size: 5rem;

@@ -21,7 +21,7 @@
         <nav id="nav-primary">
             <a id="site-title" href="/" title="Lankester & Feenstra ancestries">
                 <span class="betty-logo"></span>
-                <span class="betty-greeting">Welcome to Betty, my dear</span>
+                <span class="betty-greeting">Welcome to Betty</span>
             </a>
             <div id="nav-sections" class="nav-primary-expandable">
                 <h2 class="nav-primary-action">Menu</h2>
@@ -37,12 +37,14 @@
         </nav>
     </header>
     <div id="content">
-        <h1{% if page_class is defined and page_class == 'featured-page' %} class="visually-hidden"{% endif %}>{{ page_title }}</h1>
+        {% if page_title is defined %}
+            <h1{% if page_class is defined and page_class == 'featured-page' %} class="visually-hidden"{% endif %}>{{ page_title }}</h1>
+        {% endif %}
         {% block page_content %}{% endblock %}
     </div>
     <footer>
         <p>
-            Copyright Bart Feenstra & contributors
+            Copyright Bart Feenstra & <a href="https://github.com/bartfeenstra/betty/graphs/contributors">contributors</a>
         </p>
         <p>Find Betty on:</p>
         <ul>
