@@ -70,3 +70,7 @@ a.call-to-action {
 a.call-to-action:hover {
   background-color: var(--interaction-active-color);
 }
+
+abbr {
+  cursor: help;
+}
