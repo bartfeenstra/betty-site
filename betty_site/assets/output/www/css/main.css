@@ -1,3 +1,7 @@
 @import 'accessibility.css';
 @import 'page.css';
 @import 'text.css';
+@import 'navigation.css';
+@import 'featured.css';
+@import 'gallery.css';
+@import 'releases.css';

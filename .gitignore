@@ -1,6 +1,7 @@
 # Third-party dependencies
 /.tox
 /node_modules
+/venv
 
 # Build artifacts.
 /betty_site.egg-info

@@ -1,0 +1,23 @@
+<div class="platforms{% if platform_detection | default(False) %} platform-detection{% endif %}">
+    <div class="platform platform-mac-os">
+        <h2>Mac OS</h2>
+        {% with platform_download_types = [betty_release_download_type.EXECUTABLE_MAC_ZIP] %}
+            {% include 'platform-releases.html.j2' %}
+        {% endwith %}
+    </div>
+    <div class="platform platform-windows">
+        <h2>Windows</h2>
+        {% with platform_download_types = [betty_release_download_type.EXECUTABLE_WINDOWS_ZIP] %}
+            {% include 'platform-releases.html.j2' %}
+        {% endwith %}
+    </div>
+    <div class="platform platform-any">
+        <h2>Any platform</h2>
+        {% include 'platform-releases.html.j2' %}
+    </div>
+    {% if view_more_path is defined and view_more_label is defined %}
+        <p class="platforms-view-more">
+            <a href="{{ view_more_path }}">{{ view_more_label }}</a>
+        </p>
+    {% endif %}
+</div>

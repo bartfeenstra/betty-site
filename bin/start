@@ -4,13 +4,10 @@ set -Eeuo pipefail
 
 cd "$(dirname "$0")/.."
 
-# @todo Run the Docker container and mount the output and nginx config as volumes
-# @todo
-# @todo
 docker build -t betty-site ./betty_site/assets/docker
 docker stop betty-site || true
 docker container rm betty-site || true
 output_directory_path=$(cd ./output && pwd)
 docker run -d --name betty-site --restart always -v "${output_directory_path}/nginx.conf:/etc/nginx/conf.d/betty-site.conf" -v "${output_directory_path}/www:/var/www/betty-site:ro" betty-site
 container_ip=$(docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" betty-site)
-echo "betty-site is running at ${container_ip}:80 (HTTP) and ${container_ip}:443 (HTTPS)."
+echo "betty-site is running at http://${container_ip} and https://${container_ip}."

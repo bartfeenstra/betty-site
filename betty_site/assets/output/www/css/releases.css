@@ -1,0 +1,59 @@
+.platforms {
+    text-align: center;
+    width: 100%;
+}
+
+.platforms-view-more {
+    text-align: center;
+}
+
+.platform {
+    background-color: #eee;
+    background-position: top 1rem right 1rem;
+    background-repeat: no-repeat;
+    background-size: 5rem;
+    display: inline-block;
+    margin: 1rem;
+    min-width: 20rem;
+    max-width: 30rem;
+    padding: 1rem;
+    text-align: start;
+}
+
+.platform h2 {
+    margin-top: 1.5rem;
+}
+
+.platform-mac-os {
+    background-image: url("/icons/apple.svg");
+}
+
+.platform-windows {
+    background-image: url("/icons/windows.svg");
+}
+
+.platform-any {
+    background-image: url("/icons/code.svg");
+}
+
+.platform-detection .platform:not(.platform-any) {
+    display: none;
+}
+
+.platform-detection.platform-detected .platform {
+    display: none;
+}
+
+.releases {
+    list-style: none;
+}
+
+.releases li {
+    font-size: 1.3rem;
+    font-weight: lighter;
+    padding: 0.5rem;
+}
+
+.releases li:nth-of-type(even) {
+    background-color: #eeeeee;
+}

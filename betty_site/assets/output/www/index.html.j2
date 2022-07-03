@@ -1,7 +1,70 @@
 {% extends 'base.html.j2' %}
-{% set page_title = 'Welcome to Betty, my dears' %}
-{% set page_subtitle = 'Betty generates interactive websites from your genealogy family trees' %}
-{% set page_class = 'landing-page' %}
+{% set page_class = 'featured-page' %}
 {% block page_content %}
-    <p>Hi there!</p>
+    <div class="featured featured-two-columns">
+        <div class="featured-column featured-text">
+            <p>
+                Betty visualizes your family history and allows you to publish it by building interactive genealogy websites
+                out of your <a href="https://gramps-project.org/">Gramps</a> and
+                <a href="https://en.wikipedia.org/wiki/GEDCOM">GEDCOM</a> family trees.
+            </p>
+        </div>
+        <div class="featured-column">
+            <h2 class="call-to-action">Download & install Betty</h2>
+            {% with view_more_path='/install', view_more_label='View other installation options', platform_detection=True %}
+                {% include 'platforms.html.j2' %}
+            {% endwith %}
+        </div>
+    </div>
+    <div id="front-page-getting-started" class="featured featured-two-columns">
+        <div class="featured-column">
+            <div class="featured-text">
+                <h2>Screen shots</h2>
+            </div>
+            <div class="gallery">
+                <a href="/images/betty-gui-project-window-general-pane--ubuntu-22-04--en-US.png">
+                    <figure>
+                        <img src="/images/betty-gui-project-window-general-pane--ubuntu-22-04--en-US.png" alt="A screen shot of Betty's project window on Ubuntu 22.04">
+                        <figcaption>The project window on Ubuntu 22.04</figcaption>
+                    </figure>
+                </a>
+                <a href="/images/betty-cli-demo--ubuntu-22-04--en-US.png">
+                    <figure>
+                        <img src="/images/betty-cli-demo--ubuntu-22-04--en-US.png" alt="A screen shot of a demonstration site being launched using Betty's command line">
+                        <figcaption>A demonstration site being launched using the command line</figcaption>
+                    </figure>
+                </a>
+            </div>
+        </div>
+        <div class="featured-column">
+            <div class="featured-text">
+                <h2>Features</h2>
+                <p>
+                    Use Betty to generate a site to view on your own computer, to copy onto a friend's USB drive, or to publish on the internet.
+                </p>
+                <ul>
+                    <li>build pages for people, places, events, media, sources, and more</li>
+                    <li>show interactive maps and family trees</li>
+                    <li>translate your site into one or more languages of your choice</li>
+                    <li>determine privacy and anonymize living people</li>
+                    <li>show <a href="https://www.wikipedia.org/">Wikipedia</a> summaries for people and places</li>
+                    <li>publish your site quickly, easily, and anywhere, because no additional software is needed to 'run' it</li>
+                </ul>
+                <p>
+                    Betty sites are:
+                </p>
+                <ul>
+                    <li>fast and secure</li>
+                    <li>accessible to disabled people</li>
+                    <li>user-friendly on phones and tablets</li>
+                </ul>
+                <p>
+                    Betty does not only come as a desktop application, but also features a command line and a rich <a href="https://www.python.org/">Python</a> <abbr title="Application Programming Interface">API</abbr>.
+                </p>
+                <p>
+                    <a href="https://ancestry.bartfeenstra.com/" class="call-to-action">View an example Betty site</a>
+                </p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

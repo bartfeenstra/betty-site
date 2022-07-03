@@ -1,25 +1,7 @@
 {% extends 'base.html.j2' %}
-{% set page_title = 'Download & installation' %}
+{% set page_title = 'Download & install Betty' %}
 {% block page_content %}
-    <div class="platforms">
-        <div class="platform platform-mac-os">
-            <h2>Mac OS</h2>
-            {% with platform_download_types = [betty_release_download_type.EXECUTABLE_MAC_ZIP] %}
-                {% include 'platform-releases.html.j2' %}
-            {% endwith %}
-        </div>
-        <div class="platform platform-windows">
-            <h2>Windows</h2>
-            {% with platform_download_types = [betty_release_download_type.EXECUTABLE_WINDOWS_ZIP] %}
-                {% include 'platform-releases.html.j2' %}
-            {% endwith %}
-        </div>
-        <div class="platform platform-any">
-            <h2>Any platform</h2>
-            {% include 'platform-releases.html.j2' %}
-        </div>
-    </div>
-    <p class="view-releases">
-        <a href="/release">View all releases</a>
-    </p>
+    {% with view_more_path='/release', view_more_label='View all releases' %}
+        {% include 'platforms.html.j2' %}
+    {% endwith %}
 {% endblock %}
