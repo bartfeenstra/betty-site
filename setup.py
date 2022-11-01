@@ -8,6 +8,7 @@ SETUP = {
     'python_requires': '~= 3.9',
     'install_requires': [
         'jinja2 ~= 3.1.1',
+        'requests ~= 2.28.1',
         'semver ~= 2.13.0',
     ],
     'extras_require': {

@@ -11,14 +11,20 @@ h6 {
 }
 
 h1 {
-  font-weight: normal;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: lighter;
 }
 
 h2 {
-  font-weight: normal;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: lighter;
   margin-top: 3rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: lighter;
+  margin-top: 1rem;
 }
 
 a {
@@ -46,4 +52,25 @@ kbd {
   border: 1px solid #777;
   border-radius: 0.3rem;
   padding: 0 0.3rem;
+}
+
+.call-to-action {
+  background-color: var(--interaction-inactive-color);
+  color: #000;
+  display: block;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 1rem;
+}
+
+a.call-to-action {
+  width: fit-content;
+}
+
+a.call-to-action:hover {
+  background-color: var(--interaction-active-color);
+}
+
+abbr {
+  cursor: help;
 }
